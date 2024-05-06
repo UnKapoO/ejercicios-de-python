@@ -1,0 +1,12 @@
+precio_original = int(input("Ingrese el precio original del producto "))
+descuento1 = int(input("Ingrese el porcetaje de descuento "))
+precio_final = precio_original * (descuento1/100)
+total_pago = precio_original - precio_final
+print(f"El total a pagar es:  {total_pago}")
+
+if precio_original > 1000:
+
+    descuento_extra = total_pago * 0.1
+    total_desc_extra = total_pago - descuento_extra
+    print("Se aplico un descuento extra del 10%")
+    print(f"Su total a pagar es: {total_desc_extra}")
