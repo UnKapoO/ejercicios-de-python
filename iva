@@ -1,0 +1,8 @@
+producto = input("Ingrese el nombre del producto")
+valor_producto = int(input("Ingrese el valor del producto"))
+valor_neto = float(0.81)
+valor_sin_iva = float(valor_producto* valor_neto)
+
+print(f"PRODUCTO:\t{producto}")
+print(f"VALOR PRODUCTO:\t{valor_producto}")
+print(f"VALOR SIN IVA:\t{valor_sin_iva}")
