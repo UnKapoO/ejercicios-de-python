@@ -1,0 +1,47 @@
+contador1= 0
+contador2= 0
+contador3= 0
+contador4= 0
+
+val1= 4500
+val2= 5000
+val3= 5200
+val4= 4800
+op= None
+
+while op != 5:
+    op= print("1. Pikachu Roll $4500")
+    op= print("2. Otaku Roll $5000")
+    op= print("3. Pulpo venenoso $5200")
+    op= print("4. Anguila electrica roll $4800")
+    op= print("5. Salir")
+
+    op= int(input("Seleccione una opcion"))
+
+    if op == 1:
+     contador1 += 1
+     print("Se agregó Pikachu Roll")
+    if op == 2:
+       contador2 += 1    
+       print("Se agregó Otaku Roll")
+    if op == 3:
+       contador3 += 1
+       print("Se agregó Pulpo venenoso")
+    if op == 4:
+       contador4 += 1
+       print("Se agregó Anguila electrica roll")
+    if op == 5:
+       print("Salir")
+
+descuento = input("Tiene codigo de descuento?")
+if descuento == "si":
+   codigo = input("Ingrese codigo")
+   if codigo == "soyotaku":
+      print("Se agregó un descuento")
+   if codigo != "soyotaku":
+      print("Codigo no valido")
+      op2 =print("1. Reingresar codigo")
+      op2 =print("2. Volver a menu principal")
+      op2 = int(input("Seleccione opcion"))
+      while op2 == 2:
+         if op2 == 1:
