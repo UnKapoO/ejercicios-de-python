@@ -3,45 +3,75 @@ contador2= 0
 contador3= 0
 contador4= 0
 
+
 val1= 4500
 val2= 5000
 val3= 5200
 val4= 4800
-op= None
+while True:
 
-while op != 5:
-    op= print("1. Pikachu Roll $4500")
-    op= print("2. Otaku Roll $5000")
-    op= print("3. Pulpo venenoso $5200")
-    op= print("4. Anguila electrica roll $4800")
-    op= print("5. Salir")
+    print("1. Pikachu Roll $4500")
+    print("2. Otaku Roll $5000")
+    print("3. Pulpo venenoso $5200")
+    print("4. Anguila electrica roll $4800")
+    print("5. Salir")
 
-    op= int(input("Seleccione una opcion"))
+    op = input("selecciona una opcion")
 
-    if op == 1:
-     contador1 += 1
-     print("Se agregó Pikachu Roll")
-    if op == 2:
-       contador2 += 1    
-       print("Se agregó Otaku Roll")
-    if op == 3:
-       contador3 += 1
-       print("Se agregó Pulpo venenoso")
-    if op == 4:
-       contador4 += 1
-       print("Se agregó Anguila electrica roll")
-    if op == 5:
-       print("Salir")
+    if op == "1":
+        contador1 += 1
+        print("Se agregó Pikachu Roll")
+        seguir = input("Desea seguir comprando? si/no")
+        if seguir == "si":
+            continue
+        else: 
+            break
 
-descuento = input("Tiene codigo de descuento?")
-if descuento == "si":
-   codigo = input("Ingrese codigo")
-   if codigo == "soyotaku":
-      print("Se agregó un descuento")
-   if codigo != "soyotaku":
-      print("Codigo no valido")
-      op2 =print("1. Reingresar codigo")
-      op2 =print("2. Volver a menu principal")
-      op2 = int(input("Seleccione opcion"))
-      while op2 == 2:
-         if op2 == 1:
+    elif op == "2":
+        contador2 += 1
+        print("Se agregó Otaku Roll")
+        seguir = input("Desea seguir comprando? si/no")
+        if seguir == "si":
+            continue
+        else: 
+            break
+    elif op == "3":
+        contador3 += 1
+        print("Se agregó Pulpo venenoso")
+        seguir = input("Desea seguir comprando? si/no")
+        if seguir == "si":
+            continue
+        else: 
+            break
+    elif op == "4":
+        contador4 += 1
+        print("Se agregó Anguila electrica roll")
+        seguir = input("Desea seguir comprando? si/no")
+        if seguir == "si":
+            continue
+        else: 
+            break
+    else:
+        print(f"La opcion {op} no valida")
+
+pago1 = contador1 * val1
+pago2 = contador2 * val1
+pago3 = contador3 * val1
+pago4 = contador4 * val1
+total_pago = pago1 + pago2 + pago3 + pago4
+
+tiene_codigo = input("¿Tiene codigo de descuento? si/ no ")
+
+if tiene_codigo == "si":
+    codigo = input("Ingresa el codigo: ")
+    if codigo == "soyotaku":
+        descuento = total_pago * 0.1
+    else:
+        descuento = 0
+else:
+    print("La boleta")
+
+
+
+
+print(pago1)
