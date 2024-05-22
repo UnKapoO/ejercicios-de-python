@@ -1,0 +1,122 @@
+val1= 4500
+val2= 5000
+val3= 5200
+val4= 4800
+
+contador1= 0
+contador2= 0
+contador3= 0
+contador4= 0
+
+pago1= 0
+pago2= 0
+pago3= 0
+pago4= 0
+totalpago = 0
+descuento = 0
+pagodescuento = 0
+totalproductos= 0
+rut= 0
+
+while True:
+    print("1. Pikachu Roll $4500")
+    print("2. Otaku Roll $5000")
+    print("3. Pulpo Venenoso $5200")
+    print("4. Anguila Electrica Roll $4800")
+
+    op = int(input("Seleccione una opción\n"))
+
+    if op == 1:
+        contador1 +=1 
+        pago1 = contador1 * val1
+        seguir= input("Se agregó una Pikachu Roll...¿Desea continuar? si/no\n")
+        if seguir == "si":
+            continue
+        elif seguir == "no":
+            break
+        else: 
+            print("La opcion ingresada no es valida")
+        
+
+    elif op == 2:
+        contador2 += 1
+        pago2 = contador2 + val2
+        seguir= input("Se agregó un Otaku Roll...¿Desea continuar? si/no\n")
+        if seguir == "si":
+            continue
+        elif seguir == "no":
+            break
+
+        
+    elif op == 3:
+        contador3 += 1
+        pago3 = contador3 * val3
+        seguir= input("Se agregó un Pulpo Venenoso...¿Desea continuar? si/no\n")
+        if seguir == "si":
+            continue
+        elif seguir == "no":
+            break
+
+    elif op == 4:
+        contador4 += 1
+        pago4 = contador4 * val4
+        seguir= input("Se agregó una Anguila Electrica...¿Desea continuar? si/no\n")
+        if seguir == "si":
+            continue
+        elif seguir == "no":
+            break
+
+    else:
+        print("La opcion ingresada no es valida")
+
+totalpago = pago1 + pago2 + pago3 + pago4
+totalproductos = contador1 + contador2 + contador3 + contador4
+
+while True:
+    descuento = input("Tiene codigo de descuento  si/no\n")
+    if descuento == "si":
+        codigo = input("Ingrese codigo de descuento: \n")
+        if codigo == "soyotaku":
+            descuento = totalpago * 0.1
+            pagodescuento = totalpago - descuento
+            print(f"Descuento: {descuento}")
+            break
+        else:
+            print("Codigo no valido")
+            reintentar =input("Para reintentar presione 1\nPara volver al menú presione x\n")
+            if reintentar == "1":
+                continue
+            elif reintentar == "x":
+                break
+            else:
+               print("Opcion no valida")
+    elif descuento == "no":
+        break
+    else:
+        print("La opcion ingresada no es valida")
+
+
+while True:
+    rut = input("Ingrese su RUT (Sin puntos ni guion):\n")
+    if len(rut) == 9:
+        print("RUT valido")
+        break
+    else: 
+        print("RUT no valido")
+        continue
+
+print(f"Total Productos= {totalproductos}")
+print("-------------------------------")
+if contador1 > 0:
+    print(f"Pikachu Roll: {contador1}")
+if contador2 > 0:
+    print(f"Otaku Roll: {contador2}")
+if contador3 > 0:
+    print(f"Pulpo Venenoso: {contador3}")
+if contador4 > 0:
+    print(f"Anguila Electrica: {contador4}")
+
+print("-------------------------------")
+print(f"Sub Total= {totalpago}")
+print(f"Descuento= {descuento}")
+print(f"Total a Pagar= {pagodescuento}")
